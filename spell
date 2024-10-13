@@ -1,9 +1,0 @@
-class Spell:
-    def __init__(self, name, mana_cost, effect):
-        self.name = name
-        self.mana_cost = mana_cost
-        self.effect = effect
-
-    def __str__(self):
-        return f"{self.name} (Mana Cost: {self.mana_cost})"
-
