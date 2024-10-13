@@ -1,0 +1,18 @@
+Minion (minion.py):
+- Represents a minion with attributes like name, attack, health, and mana_cost.
+- Minions can take damage, and if health drops to zero or below, the minion is destroyed.
+
+Player (player.py):
+- Represents a player who can hold cards in their hand, summon minions to the board, and play spells.
+- Handles starting a turn, drawing cards, attacking, and more.
+- Some parts of this file appear truncated, likely due to a larger size.
+
+Spell (spell.py):
+- Represents a spell with attributes like name, mana_cost, and effect.
+- Can be cast on a target, with a message printed regarding the effect.
+
+Deck (deck.py):
+- Initialize a deck, shuffle the cards, and draw one card at a time.  
+
+Main (main.py)
+- Main class sets up a card game where each player has a deck containing both minion and spell cards. 
