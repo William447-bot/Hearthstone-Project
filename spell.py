@@ -15,4 +15,3 @@ class Spell:
     def __str__(self):
         """Return the string representation of the spell."""
         return f"Spell: {self.name}, Mana Cost: {self.mana_cost}, Effect: {self.effect}"
-
