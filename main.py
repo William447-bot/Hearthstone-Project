@@ -2,10 +2,9 @@ from player import Player
 from minion import Minion
 from spell import Spell
 from deck import Deck
+import random
 
 class Main:
-    """Main class to initialize and run the game."""
-    
     def __init__(self):
         """Initialize the game with players, cards, and start the game loop."""
         # Create two players
@@ -21,7 +20,7 @@ class Main:
 
     def create_deck(self):
         """Creates a deck with a mix of minions and spells."""
-        # Create a list of minion cards
+        # Available minions and spells
         minions = [
             Minion("Stormwind Champion", 6, 6, 7, "Gives +1/+1 to all other minions"),
             Minion("Boulderfist Ogre", 6, 6, 7, "A tough ogre"),
@@ -30,8 +29,7 @@ class Main:
             Minion("Bloodfen Raptor", 2, 3, 2, "A basic minion")
         ]
 
-        # Create a list of spell cards
-        Spells = [
+        spells = [
             Spell("Fireball", 4, "Deal 6 damage"),
             Spell("Polymorph", 4, "Transform a minion into a 1/1 Sheep"),
             Spell("Flamestrike", 7, "Deal 5 damage to all enemy minions"),
@@ -40,18 +38,14 @@ class Main:
             Spell("Cataclysm", 6, "Destroy all minions and discard 2 cards")
         ]
 
-        # Combine minions and spells into the deck
-        deck = Deck(minions + spells)
+        # Create a deck with 30 cards, randomly selected from minions and spells
+        deck = random.choices(minions + spells, k=30)
 
-        return deck
+        return Deck(deck)
 
     def start_game(self):
         """Start the game by initializing player hands and running the game loop."""
         print("Starting the game...")
-
-        # Both players draw their initial hands
-        self.player1.draw_initial_hand()
-        self.player2.draw_initial_hand()
 
         # Start the game loop
         self.player1.game_loop(self.player2)
@@ -59,4 +53,3 @@ class Main:
 # Run the game
 if __name__ == "__main__":
     main_game = Main()
-
